@@ -13,11 +13,9 @@ export async function setIp(req: Request, res: Response) {
 }
 
 export async function findIp(req: Request, res: Response) {
-  console.log("dupa")
   const ip = req.params.ip;
   try {
     const ipInfo = await IPService.ipService.getIpInfo(ip);
-    console.log(ipInfo)
     res.send(ipInfo);
   } catch (error) {
     console.error("Error in findIp:", error);
